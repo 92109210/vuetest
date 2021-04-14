@@ -1,25 +1,13 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue' //引入 Vue
+import Vuex from 'vuex' //引入 Vuex
+import user from './modules/user' //引入 user module
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    count: 0
-  },
-  state1: {
-    count:  1
-  },
-  mutations: {
-    mutationsAddCount({count}, n = 0) {
-      return (count += n)
-    },
-    mutationsReduceCount(state, n = 0) {
-      return (state.count -= n)
-    }
-  },
-  actions: {
-  },
+const store = new Vuex.Store({
   modules: {
+    user //使用 user.js 中的 action
   }
 })
+
+export default store
